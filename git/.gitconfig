@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	name = thomas mafut
+	email = mafut50@gmail.com
+[core]
+	editor = code --wait
