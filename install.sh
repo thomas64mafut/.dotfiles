@@ -38,6 +38,16 @@ gh auth login
 # setup github user in git
 gh auth setup-git 
 
+# prompt the user for their name and email
+read -p "Enter your name: " name
+read -p "Enter your email: " email
+
+# set the name and email in the global .gitconfig file
+git config --global user.name "$name"
+git config --global user.email "$email"
+
+git config --global init.defaultBranch main
+
 echo '\n\n'
 echo 'RELOAD TERMINAL AND PASTE THE NEXT COMMANDS!!!!'
 echo '\n\n'
