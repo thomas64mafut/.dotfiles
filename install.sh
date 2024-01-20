@@ -52,4 +52,9 @@ echo '\n\n'
 echo 'RELOAD TERMINAL AND PASTE THE NEXT COMMANDS!!!!'
 echo '\n\n'
 echo 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher 
-fisher update'
+fisher install jorgebucaran/nvm.fish
+fisher install jorgebucaran/autopair.fish
+fisher install lilyball/nix-env.fish
+fisher install jethrokuan/fzf
+fisher install jethrokuan/z
+fisher install rstacruz/fish-npm-global''
