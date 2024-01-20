@@ -7,7 +7,6 @@ fish/conf.d/*
 !fish/conf.d/nix-env.fish
 !fish/conf.d/abbr.fish
 hosts.yml
-.gitconfig
 
 # nodemon
 simple-update-notifier
