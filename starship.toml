@@ -1,27 +1,15 @@
 # ~/.config/starship.toml
 
-add_newline = true
+add_newline = true 
 command_timeout = 1000
-format = """$os$username$hostname$kubernetes$directory$git_branch$git_status
-~ 
+format = """ $username$hostname$kubernetes$directory$git_branch$git_status
+ ~ 
 """
 
 # Drop ugly default prompt characters
 [character]
 success_symbol = ''
 error_symbol = ''
-
-# ---
-
-[os]
-format = '[$symbol](bold white) '
-disabled = false
-
-[os.symbols]
-Windows = ''
-Arch = '󰣇'
-Ubuntu = ''
-Macos = '󰀵'
 
 # ---
 

@@ -9,6 +9,7 @@ nix-env -iA \
 	nixpkgs.fish \
 	nixpkgs.starship \
 	nixpkgs.git \
+	nixpkgs.lazygit \
 	nixpkgs.git-credential-manager \
 	nixpkgs.gh \
 	nixpkgs.neovim \
@@ -21,7 +22,8 @@ nix-env -iA \
 	nixpkgs.eza \
 	nixpkgs.gcc \
 	nixpkgs.nodejs \
-	nixpkgs.nodePackages_latest.pnpm
+	nixpkgs.nodePackages_latest.pnpm \
+	nixpkgs.neofetch
 
 # git config
 stow git
@@ -48,9 +50,8 @@ git config --global user.email "$email"
 
 git config --global init.defaultBranch main
 
-echo "\n\n"
-echo "RELOAD TERMINAL AND PASTE THE NEXT COMMANDS!!!!\n"
-echo "echo 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher 
+echo "RELOAD TERMINAL AND PASTE THE NEXT COMMANDS!!!!"
+echo "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher 
 fisher install jorgebucaran/nvm.fish
 fisher install jorgebucaran/autopair.fish
 fisher install lilyball/nix-env.fish

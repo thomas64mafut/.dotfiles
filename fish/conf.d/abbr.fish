@@ -1,13 +1,13 @@
-abbr rm "rm -i"
+abbr rm "rm -rf"
 abbr cp "cp -i"
 abbr mv "mv -i"
 abbr mkdir "mkdir -p"
 abbr h "history"
 abbr which "type -a"
-abbr ll "exa -lag --header --long"
-abbr ls "exa -lag --header"
-abbr tree "exa --tree"
-abbr zz "z -"
+abbr ll "exa -l --no-permissions --icons --no-user"
+abbr ls "exa -la --no-permissions --icons --no-user"
+abbr lss "exa -la -s modified --no-permissions --icons --no-user"
+abbr tree "exa --tree -l --no-permissions --icons --no-user"
 abbr cdh "cd $home"
 abbr cl clear
 abbr vim nvim
