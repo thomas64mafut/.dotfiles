@@ -12,3 +12,4 @@ abbr cdh "cd $home"
 abbr cl clear
 abbr vim nvim
 abbr g git
+abbr lg lazygit 
