@@ -31,16 +31,15 @@ command -v zsh | sudo tee -a /etc/shells
 # use zsh as main shell
 sudo chsh -s $(which zsh) $USER
 
-# bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt> ~/.zsh_plugins.sh
-
 # stow 
 stow git
 stow zsh 
 stow p10k
 
+# bundle zsh plugins
+antibody bundle < ~/.zsh_plugins.txt> ~/.zsh_plugins.sh
+
 # login into github
-#gh config set browser wslview
 gh auth login
 
 # setup github user in git
