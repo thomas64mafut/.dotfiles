@@ -6,8 +6,8 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 # install packages
 nix-env -iA \
-	nixpkgs.fish \
-	nixpkgs.starship \
+	nixpkgs.zsh \
+	nixpkgs.antibody \
 	nixpkgs.git \
 	nixpkgs.lazygit \
 	nixpkgs.git-credential-manager \
@@ -23,18 +23,24 @@ nix-env -iA \
 	nixpkgs.gcc \
 	nixpkgs.nodejs \
 	nixpkgs.nodePackages_latest.pnpm \
-	nixpkgs.neofetch
+	nixpkgs.neofetch \
 
-# git config
+# add zsh to shells
+command -v zsh | sudo tee -a /etc/shells
+
+# use zsh as main shell
+sudo chsh -s $(which zsh) $USER
+
+# bundle zsh plugins
+antibody bundle < ~/.zsh_plugins.txt> ~/.zsh_plugins.sh
+
+# stow 
 stow git
-
-# add fish to shells
-command -v fish | sudo tee -a /etc/shells
-
-# use fish as default shell
-sudo chsh -s $(which fish) $USER
+stow zsh 
+stow p10k
 
 # login into github
+#gh config set browser wslview
 gh auth login
 
 # setup github user in git
@@ -49,12 +55,3 @@ git config --global user.name "$name"
 git config --global user.email "$email"
 
 git config --global init.defaultBranch main
-
-echo "RELOAD TERMINAL AND PASTE THE NEXT COMMANDS!!!!"
-echo "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher 
-fisher install jorgebucaran/nvm.fish
-fisher install jorgebucaran/autopair.fish
-fisher install lilyball/nix-env.fish
-fisher install jethrokuan/fzf
-fisher install jethrokuan/z
-fisher install rstacruz/fish-npm-global"
