@@ -8,7 +8,6 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 nix-env -iA \
 	nixpkgs.zsh \
 	nixpkgs.starship \
-	nixpkgs.zinit \
 	nixpkgs.git \
 	nixpkgs.git-credential-manager \
 	nixpkgs.gh \
@@ -17,7 +16,7 @@ nix-env -iA \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.fzf \
-    nixpkgs.zoxide \
+	nixpkgs.zoxide \
 	nixpkgs.ripgrep \
 	nixpkgs.direnv \
 	nixpkgs.bat \
