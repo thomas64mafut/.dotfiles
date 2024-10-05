@@ -17,6 +17,7 @@ nix-env -iA \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.fzf \
+    nixpkgs.zoxide \
 	nixpkgs.ripgrep \
 	nixpkgs.direnv \
 	nixpkgs.bat \
