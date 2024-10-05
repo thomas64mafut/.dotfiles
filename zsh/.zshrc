@@ -4,9 +4,6 @@ export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 export GH_BROWSER=wslview
 
-# source plugins
-source ~/.zsh_plugins.sh
-
 # bindings
 bindkey -e
 bindkey '^p' history-search-backward
@@ -22,15 +19,30 @@ alias tree='exa --tree -l --no-permissions --icons --no-user'
 alias cdh='cd $home'
 alias g='git'
 alias lg='lazygit'
+alias list-npm-globals='npm list -g --depth=0' # List out all globally installed npm packages
+alias gcob='git branch | fzf | xargs git checkout' # checkout branch using fzf
 
-# Bundle zsh plugins via antibody
-alias update-antibody='antibody bundle < $HOME/.zsh_plugins.txt > $HOME/.zsh_plugins.sh'
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-# List out all globally installed npm packages
-alias list-npm-globals='npm list -g --depth=0'
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+zinit light hlissner/zsh-autopair
+zinit light lukechilds/zsh-nvm
 
-# checkout branch using fzf
-alias gcob='git branch | fzf | xargs git checkout'
+# Add in snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::git-extras
+zinit snippet OMZP::sudo
+zinit snippet OMZP::ubuntu
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
 
 # History
 HISTSIZE=5000

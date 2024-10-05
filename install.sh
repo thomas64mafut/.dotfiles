@@ -8,7 +8,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 nix-env -iA \
 	nixpkgs.zsh \
 	nixpkgs.starship \
-	nixpkgs.antibody \
+	nixpkgs.zinit \
 	nixpkgs.git \
 	nixpkgs.git-credential-manager \
 	nixpkgs.gh \
@@ -35,16 +35,13 @@ sudo chsh -s $(which zsh) $USER
 
 # stow 
 stow git
-stow zsh 
-
-# bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt> ~/.zsh_plugins.sh
+stow zsh
 
 # login into github
 gh auth login
 
 # setup github user in git
-gh auth setup-git 
+gh auth setup-git
 
 # prompt the user for their name and email
 read -p "Enter your name: " name
