@@ -7,11 +7,12 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 # install packages
 nix-env -iA \
 	nixpkgs.zsh \
+	nixpkgs.starship \
 	nixpkgs.antibody \
 	nixpkgs.git \
-	nixpkgs.lazygit \
 	nixpkgs.git-credential-manager \
 	nixpkgs.gh \
+	nixpkgs.lazygit \
 	nixpkgs.neovim \
 	nixpkgs.tmux \
 	nixpkgs.stow \
@@ -34,7 +35,6 @@ sudo chsh -s $(which zsh) $USER
 # stow 
 stow git
 stow zsh 
-stow p10k
 
 # bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt> ~/.zsh_plugins.sh
