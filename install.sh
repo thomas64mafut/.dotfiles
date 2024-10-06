@@ -35,6 +35,7 @@ sudo chsh -s $(which zsh) $USER
 # stow 
 stow git
 stow zsh
+stow tmux
 
 # login into github
 gh auth login
