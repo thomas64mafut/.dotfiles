@@ -6,8 +6,11 @@ export GH_BROWSER=wslview
 
 # bindings
 bindkey -e
+bindkey '^F' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
 bindkey '^[w' kill-region
 
 # aliases 
