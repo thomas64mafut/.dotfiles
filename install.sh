@@ -25,12 +25,14 @@ nix-env -iA \
 	nixpkgs.nodejs \
 	nixpkgs.nodePackages_latest.pnpm \
 	nixpkgs.neofetch \
+	nixpkgs.docker \
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
 
 # use zsh as main shell
 sudo chsh -s $(which zsh) $USER
+sudo timedatectl set-timezone America/Argentina/Tucuman
 
 # stow 
 stow git
