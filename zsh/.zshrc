@@ -84,7 +84,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --pad
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi 
 
 # pnpm
-export PNPM_HOME="~/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -101,3 +101,5 @@ precmd_functions+=(keep_current_path)
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+export PATH="/home/tmafut/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/tmafut/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
