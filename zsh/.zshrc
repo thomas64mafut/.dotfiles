@@ -15,7 +15,7 @@ bindkey '^[w' kill-region
 
 # aliases 
 alias which='type -a'
-alias ll='exa -l --no-permissions --icons --no-user'
+alias ll='exa -l --icons --no-user'
 alias ls='exa -la --no-permissions --icons --no-user'
 alias lss='exa -la -s modified --no-permissions --icons --no-user'
 alias tree='exa --tree -l --no-permissions --icons --no-user'

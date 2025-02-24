@@ -6,26 +6,26 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 # install packages
 nix-env -iA \
-	nixpkgs.zsh \
-	nixpkgs.starship \
-	nixpkgs.git \
-	nixpkgs.git-credential-manager \
-	nixpkgs.gh \
-	nixpkgs.lazygit \
-	nixpkgs.neovim \
-	nixpkgs.tmux \
-	nixpkgs.stow \
-	nixpkgs.fzf \
-	nixpkgs.zoxide \
-	nixpkgs.ripgrep \
-	nixpkgs.direnv \
-	nixpkgs.bat \
-	nixpkgs.eza \
-	nixpkgs.gcc \
-	nixpkgs.nodejs \
-	nixpkgs.nodePackages_latest.pnpm \
-	nixpkgs.neofetch \
-	nixpkgs.docker \
+  nixpkgs.zsh \
+  nixpkgs.starship \
+  nixpkgs.git \
+  nixpkgs.git-credential-manager \
+  nixpkgs.gh \
+  nixpkgs.lazygit \
+  nixpkgs.neovim \
+  nixpkgs.tmux \
+  nixpkgs.stow \
+  nixpkgs.fzf \
+  nixpkgs.zoxide \
+  nixpkgs.ripgrep \
+  nixpkgs.direnv \
+  nixpkgs.bat \
+  nixpkgs.eza \
+  nixpkgs.gcc \
+  nixpkgs.nodejs \
+  nixpkgs.nodePackages_latest.pnpm \
+  nixpkgs.neofetch \
+  nixpkgs.docker
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
@@ -34,7 +34,7 @@ command -v zsh | sudo tee -a /etc/shells
 sudo chsh -s $(which zsh) $USER
 sudo timedatectl set-timezone America/Argentina/Tucuman
 
-# stow 
+# stow
 stow git
 stow zsh
 stow tmux
@@ -54,3 +54,12 @@ git config --global user.name "$name"
 git config --global user.email "$email"
 
 git config --global init.defaultBranch main
+
+# setup ssh-agent systemd user service
+if systemctl --user is-active ssh-agent.service >/dev/null 2>&1; then
+  echo "ssh-agent service is already active."
+else
+  echo "enabling and starting ssh-agent service..."
+  systemctl --user enable ssh-agent.service
+  systemctl --user start ssh-agent.service
+fi
