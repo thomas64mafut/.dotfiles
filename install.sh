@@ -22,10 +22,9 @@ nix-env -iA \
   nixpkgs.bat \
   nixpkgs.eza \
   nixpkgs.gcc \
-  nixpkgs.nodejs \
-  nixpkgs.nodePackages_latest.pnpm \
   nixpkgs.neofetch \
-  nixpkgs.docker
+  nixpkgs.docker \ 
+  nixpkgs.lazydocker 
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells

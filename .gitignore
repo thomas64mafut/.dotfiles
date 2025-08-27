@@ -1,5 +1,13 @@
-lazygit
-hosts.yml
+# Ignore everything
+*
 
-# nodemon
-simple-update-notifier
+!.git
+!.gitignore
+!gh
+!git
+!install.sh
+!nvim
+!README.md
+!starship.toml
+!tmux
+!zsh
