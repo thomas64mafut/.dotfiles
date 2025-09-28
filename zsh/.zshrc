@@ -22,6 +22,7 @@ alias tree='exa --tree -l --no-permissions --icons --no-user'
 alias cdh='cd $home'
 alias g='git'
 alias lg='lazygit'
+alias ld='lazydocker'
 alias list-npm-globals='npm list -g --depth=0' # List out all globally installed npm packages
 alias gcob='git branch | fzf | xargs git checkout' # checkout branch using fzf
 
@@ -101,7 +102,4 @@ precmd_functions+=(keep_current_path)
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
-export PATH="/home/tmafut/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/tmafut/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-export PATH="/home/tmafut/.config/composer/vendor/bin:$PATH"
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/snap/bin"
