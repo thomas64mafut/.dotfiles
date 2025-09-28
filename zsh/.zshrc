@@ -26,6 +26,9 @@ alias ld='lazydocker'
 alias list-npm-globals='npm list -g --depth=0' # List out all globally installed npm packages
 alias gcob='git branch | fzf | xargs git checkout' # checkout branch using fzf
 
+# Load completions
+autoload -Uz compinit && compinit
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -53,8 +56,6 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::ubuntu
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # History
@@ -73,7 +74,6 @@ setopt hist_find_no_dups
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
