@@ -12,7 +12,7 @@ nix-env -iA \
   nixpkgs.git-credential-manager \
   nixpkgs.gh \
   nixpkgs.lazygit \
-  nixpkgs.neovim \
+  nixpkgs.lazydocker \
   nixpkgs.tmux \
   nixpkgs.stow \
   nixpkgs.fzf \
@@ -22,9 +22,10 @@ nix-env -iA \
   nixpkgs.bat \
   nixpkgs.eza \
   nixpkgs.gcc \
-  nixpkgs.neofetch \
-  nixpkgs.docker \ 
-  nixpkgs.lazydocker 
+  nixpkgs.neofetch 
+
+# install nightly nvim
+sudo snap install --edge nvim --classic
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
@@ -53,12 +54,3 @@ git config --global user.name "$name"
 git config --global user.email "$email"
 
 git config --global init.defaultBranch main
-
-# setup ssh-agent systemd user service
-if systemctl --user is-active ssh-agent.service >/dev/null 2>&1; then
-  echo "ssh-agent service is already active."
-else
-  echo "enabling and starting ssh-agent service..."
-  systemctl --user enable ssh-agent.service
-  systemctl --user start ssh-agent.service
-fi
