@@ -22,7 +22,8 @@ nix-env -iA \
   nixpkgs.bat \
   nixpkgs.eza \
   nixpkgs.gcc \
-  nixpkgs.neofetch 
+  nixpkgs.neofetch \
+  nixpkgs.wslu
 
 # install nightly nvim
 sudo snap install --edge nvim --classic
@@ -40,7 +41,7 @@ stow zsh
 stow tmux
 
 # login into github
-gh auth login
+gh auth login --web
 
 # setup github user in git
 gh auth setup-git
