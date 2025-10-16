@@ -1,4 +1,4 @@
-vim.cmd([[set mouse=]])
+vim.cmd([[set mouse=a]])
 vim.opt.winborder = "rounded"
 vim.opt.hlsearch = false
 vim.opt.tabstop = 2
@@ -33,14 +33,21 @@ vim.pack.add({
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = 'https://github.com/neovim/nvim-lspconfig' },
 	{ src = "https://github.com/mason-org/mason.nvim" },
-	{ src = 'https://github.com/NvChad/showkeys',                 opt = true },
+	{ src = 'https://github.com/NvChad/showkeys', opt = true },
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 })
 
 require "mason".setup()
 require "showkeys".setup({ position = "top-right" })
 require "mini.pick".setup()
-require "oil".setup()
+require "oil".setup({
+	columns = {
+		"icon"
+	},
+	view_options = {
+		show_hidden = true
+	}
+})
 
 map('n', '<leader>f', ":Pick files<CR>")
 map('n', '<leader>h', ":Pick help<CR>")
