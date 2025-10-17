@@ -28,6 +28,12 @@ nix-env -iA \
 # install nightly nvim
 sudo snap install --edge nvim --classic
 
+# docker setup
+sudo snap install docker
+sudo groupadd docker 2>/dev/null || true
+sudo usermod -aG docker $USER
+sudo chmod 666 /var/run/docker.sock
+
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
 
