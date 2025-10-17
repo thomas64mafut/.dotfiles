@@ -32,6 +32,8 @@ sudo snap install --edge nvim --classic
 sudo snap install docker
 sudo groupadd docker 2>/dev/null || true
 sudo usermod -aG docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
 sudo chmod 666 /var/run/docker.sock
 
 # add zsh to shells
