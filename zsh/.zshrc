@@ -92,12 +92,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# wsl duplicate panel in the same directory
-keep_current_path() {
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-}
-precmd_functions+=(keep_current_path)
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"

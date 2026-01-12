@@ -25,9 +25,6 @@ nix-env -iA \
   nixpkgs.neofetch \
   nixpkgs.wslu
 
-# install nightly nvim
-sudo snap install --edge nvim --classic
-
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
 
