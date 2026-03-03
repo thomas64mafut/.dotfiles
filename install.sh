@@ -22,8 +22,7 @@ nix-env -iA \
   nixpkgs.bat \
   nixpkgs.eza \
   nixpkgs.gcc \
-  nixpkgs.neofetch \
-  nixpkgs.wslu
+  nixpkgs.neofetch
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells

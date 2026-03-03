@@ -1,8 +1,9 @@
+if [ -e /home/thomasmafut/.nix-profile/etc/profile.d/nix.sh ]; then . /home/thomasmafut/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 # Export nvm completion settings for lukechilds/zsh-nvm plugin
 # Note: This must be exported before the plugin is bundled
 export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
-export GH_BROWSER=wslview
 
 # bindings
 bindkey -e
@@ -97,3 +98,4 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 export PATH="$PATH:/snap/bin"
+
