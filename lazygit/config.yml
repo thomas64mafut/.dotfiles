@@ -1,0 +1,10 @@
+gui:
+  nerdFontsVersion: "3"
+  filterMode: "fuzzy"
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers
+keybinding:
+  universal:
+    quit: q

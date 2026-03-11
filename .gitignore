@@ -1,13 +1,24 @@
 # Ignore everything
 *
 
-!.git
-!.gitignore
-!gh
-!git
-!install.sh
-!nvim
-!README.md
+# Un-ignore directories (must come before files)
+!.git/
+!git/
+!nvim/
 !starship.toml
-!tmux
-!zsh
+!tmux/
+!zsh/
+!lazygit/
+
+# Un-ignore specific files
+!.gitignore
+!install.sh
+!README.md
+
+# Also un-ignore contents of directories
+!.git/**
+!git/**
+!nvim/**
+!tmux/**
+!zsh/**
+!lazygit/**
