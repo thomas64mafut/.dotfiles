@@ -1,7 +1,5 @@
 # Export nvm completion settings for lukechilds/zsh-nvm plugin
 # Note: This must be exported before the plugin is bundled
-export NVM_DIR=${HOME}/.nvm
-export NVM_COMPLETION=true
 export GH_BROWSER=wslview
 
 # bindings
@@ -13,7 +11,7 @@ bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 bindkey '^[w' kill-region
 
-# aliases 
+# aliases
 alias which='type -a'
 alias ll='exa -l --icons --no-user'
 alias ls='exa -la --no-permissions --icons --no-user'
@@ -47,7 +45,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light hlissner/zsh-autopair
-zinit light lukechilds/zsh-nvm
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -82,7 +79,7 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --padding=1"
 
 # Created by newuser for 5.9
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi 
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -96,4 +93,5 @@ esac
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+export PATH="$HOME/.volta/bin:$PATH"
 export PATH="$PATH:/snap/bin"

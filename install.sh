@@ -23,6 +23,7 @@ nix-env -iA \
   nixpkgs.eza \
   nixpkgs.gcc \
   nixpkgs.fastfetch \
+  nixpkgs.volta \
   nixpkgs.wslu
 
 # add zsh to shells
