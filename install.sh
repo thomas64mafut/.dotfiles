@@ -22,7 +22,7 @@ nix-env -iA \
   nixpkgs.bat \
   nixpkgs.eza \
   nixpkgs.gcc \
-  nixpkgs.neofetch \
+  nixpkgs.fastfetch \
   nixpkgs.wslu
 
 # add zsh to shells
